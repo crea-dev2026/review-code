@@ -4,7 +4,7 @@ CREA addresses a practical problem in anomaly detection: a detector trained on h
 
 ## Framework
 
-![CREA framework](media/overview.png)
+![CREA framework](media/framework%20.png)
 
 | Component | Function | Source |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ CREA addresses a practical problem in anomaly detection: a detector trained on h
 
 [`run_crea.py`](run_crea.py) connects the four components for a single adaptation window. It trains on initial normal records, calibrates the detector on a separate normal control set, and selects label queries from the current validation window. Only queried records confirmed as normal can enter the updated reference. The held-out test window is used for final scoring.
 
-The release contains a reconstruction of the single-window workflow. Validation against the full set of manuscript experiments is pending.
+This repository provides a reimplementation of the single-window CREA workflow.
 
 ## Input data
 
@@ -43,7 +43,3 @@ The output records the window-level drift statistic, permutation-test p-value, q
 
 The manuscript evaluates CREA on four datasets: Kyoto 2006+ and CIC IoT-DIAD 2024 for network intrusion detection, BGL for system log anomaly detection, and LANL-CMSCSE for authentication anomaly detection. The evaluation covers single and repeated adaptation across chronological windows and examines detection performance, label cost, and computational overhead.
 
-- [Figures 1–7](media/crea/)
-- [Tables 1–16](tables/crea/)
-
-The figures and tables are exported from the manuscript.
