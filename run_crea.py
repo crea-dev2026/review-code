@@ -114,7 +114,7 @@ def run(args):
     queried = torch.empty(0, dtype=torch.long)
     normal = torch.empty(0, dtype=torch.long)
     updated = False
-   if current_mask is not None:
+    if current_mask is not None:
         limit = int(args.budget * len(val_x))
         queried = torch.argsort(current_mask, descending=True)[:limit]
 
